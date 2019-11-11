@@ -1,0 +1,2 @@
+module WholeDisplay::WholeDisplaysHelper
+end
