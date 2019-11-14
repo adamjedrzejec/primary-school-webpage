@@ -1,0 +1,2 @@
+module PageHeader::NavbarsHelper
+end
