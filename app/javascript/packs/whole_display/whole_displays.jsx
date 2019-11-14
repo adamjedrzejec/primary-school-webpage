@@ -1,11 +1,15 @@
 import React from 'react'
 import ReactDOM from "react-dom";
+import { Button } from 'react-bootstrap';
 
 class WholeDisplays extends React.Component {
 
   render() {
     return(
-      <h1>Test header</h1>
+      <div>
+        <h1>Test header</h1>
+        <Button>Default button</Button>
+      </div>
     )
   }
 
