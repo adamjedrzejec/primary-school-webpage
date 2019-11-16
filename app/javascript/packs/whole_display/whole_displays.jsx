@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 
 import Navbars from "../page_header/navbars";
 
+import { Row, Col } from 'react-bootstrap';
+
 import SampleText from "../page_content/sample_text";
 import StronaGlowna from "../page_content/strona_glowna";
 import Aktualnosci from "../page_content/aktualnosci";
@@ -22,10 +24,19 @@ class WholeDisplays extends React.Component {
     return(
       <>
         <Navbars />
-        { (this.state.viewState == 'sample-text') && <SampleText /> }
-        { (this.state.viewState == 'strona-glowna') && <StronaGlowna /> }
-        { (this.state.viewState == 'aktualnosci') && <Aktualnosci /> }
-        { (this.state.viewState == 'o-szkole-historia') && <OSzkoleHistoria /> }
+
+        <Row>
+          <Col />
+          <Col xs={8} style={{ background: 'lightgray' }} >
+            { (this.state.viewState == 'sample-text') && <SampleText /> }
+            { (this.state.viewState == 'strona-glowna') && <StronaGlowna /> }
+            { (this.state.viewState == 'aktualnosci') && <Aktualnosci /> }
+            { (this.state.viewState == 'o-szkole-historia') && <OSzkoleHistoria /> }
+          </Col>
+          <Col />
+        </Row>
+
+
       </>
     )
   }
