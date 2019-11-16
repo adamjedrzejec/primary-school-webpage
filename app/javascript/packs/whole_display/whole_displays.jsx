@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from "react-dom";
 
-import Navbars from "../page_header/navbars";
+// import Navbars from "../page_header/navbars";
 
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Card } from 'react-bootstrap';
 
 import SampleText from "../page_content/sample_text";
 import StronaGlowna from "../page_content/strona_glowna";
@@ -23,9 +23,9 @@ class WholeDisplays extends React.Component {
 
     return(
       <>
-        <Navbars />
+        {/* <Navbars /> */}
 
-        <Row>
+        <Row style={{width: '100%'}}>
           <Col />
           <Col xs={8} style={{ background: 'lightgray' }} >
             { (this.state.viewState == 'sample-text') && <SampleText /> }
@@ -33,7 +33,24 @@ class WholeDisplays extends React.Component {
             { (this.state.viewState == 'aktualnosci') && <Aktualnosci /> }
             { (this.state.viewState == 'o-szkole-historia') && <OSzkoleHistoria /> }
           </Col>
-          <Col />
+          <Col>
+
+            <Card bg="success" text="white" className="mt-4" style={{ position: 'fixed' }}>
+              <Card.Header>
+                <h3>Kontakt</h3>
+              </Card.Header>
+
+              <Card.Body>
+
+                <Card.Subtitle style={{ color: '#d5ffcf', fontSize: '1.25em' }}>Telefon:</Card.Subtitle>
+                <Card.Text style={{ color: '#e4ffe0' }}>+48 123 456 789</Card.Text>
+
+                <Card.Subtitle style={{ color: '#d5ffcf', fontSize: '1.25em' }}>E-mail:</Card.Subtitle>
+                <Card.Text style={{ color: '#e4ffe0' }}>sp.rokiciny@gmail.com</Card.Text>
+              </Card.Body>
+            </Card>
+
+          </Col>
         </Row>
 
 
