@@ -37,7 +37,7 @@ class WholeDisplays extends React.Component {
 
             <Card bg="success" text="white" className="mt-4" style={{ position: 'fixed' }}>
               <Card.Header>
-                <h3>Kontakt</h3>
+                <h3 style={{ color: '#e4ffe0'}}>Kontakt</h3>
               </Card.Header>
 
               <Card.Body>
