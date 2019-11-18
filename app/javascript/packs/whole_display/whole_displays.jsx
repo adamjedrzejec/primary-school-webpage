@@ -15,9 +15,20 @@ import Navbars from "../page_header/navbars";
 
 class WholeDisplays extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.updateState = this.updateState.bind(this);
+  }
+
   state = {
-    viewState: 'sample-text',
+    viewState: 'strona-glowna',
   };
+
+  updateState(newState) {
+    this.setState({
+      viewState: newState,
+    });
+  }
 
 
   render() {
@@ -25,19 +36,19 @@ class WholeDisplays extends React.Component {
 
     return(
       <>
-        {/* <Navbars /> */}
+        <Navbars updateStateFunction={this.updateState} />
 
-        <Row style={{width: '100%'}}>
-          <Col />
+        <Row className='ml-0' style={{width: '100%', height: '94.4vh'}}>
+          <Col style={{ backgroundColor: 'lightgoldenrodyellow'}} />
           <Col xs={8} style={{ background: 'lightgray' }} >
             { (this.state.viewState == 'sample-text') && <SampleText /> }
             { (this.state.viewState == 'strona-glowna') && <StronaGlowna /> }
             { (this.state.viewState == 'aktualnosci') && <Aktualnosci /> }
             { (this.state.viewState == 'o-szkole-historia') && <OSzkoleHistoria /> }
           </Col>
-          <Col>
+          <Col style={{ backgroundColor: 'lightgoldenrodyellow'}}>
 
-            <Card bg="success" text="white" className="mt-4" style={{ position: 'fixed' }}>
+            <Card bg="success" text="white" className="mt-4" style={{ width: '100%' }}>
               <Card.Header>
                 <h3 style={{ color: '#e4ffe0'}}>Kontakt</h3>
               </Card.Header>

@@ -3,7 +3,12 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 export default class Navbars extends React.Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+
     return(
       <div>
         <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -11,8 +16,8 @@ export default class Navbars extends React.Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#strona-glowna">Strona główna</Nav.Link>
-              <Nav.Link href="#aktualnosci">Aktualności</Nav.Link>
+              <Nav.Link href="#strona-glowna" onClick={() => this.props.updateStateFunction('strona-glowna')}>Strona główna</Nav.Link>
+              <Nav.Link href="#aktualnosci" onClick={() => this.props.updateStateFunction('aktualnosci')}>Aktualności</Nav.Link>
               <NavDropdown title="O szkole" id="about-school-dropdown">
                 <NavDropdown.Item href="#o-szkole/historia">Historia szkoły</NavDropdown.Item>
                 <NavDropdown.Item href="#o-szkole/programy-i-projekty">Programy i projekty</NavDropdown.Item>
